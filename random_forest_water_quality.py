@@ -32,7 +32,7 @@ X_1 = np.array(df2[features])
 
 y_1 = np.array(df2['new_WQI'])
 
-X_train, X_test, y_train, y_test = train_test_split(X_1, y_1, test_size=0.20, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X_1, y_1, test_size=0.30, random_state=42)
 
 
 
@@ -43,14 +43,11 @@ print("no of testing samples", len(y_test))
 
 
 
-
-
-
 clf = RandomForestClassifier(n_jobs= 2, random_state = 0)
 
 clf.fit(X_train, y_train)
 
-# Y_predict = clf.predict([[6.7, 6.4, 93, 1.4, 0.1, 3433]])
+# Y_predict = clf.predict([[20, 15, 7, 550, 6, 0.1, 200]])
 
 Y_predict = clf.predict(X_test)
 
@@ -82,15 +79,14 @@ def convert_dict_value_to_string(a):
 
 
 
+print(pd.crosstab(convert_dict_value_to_string(y_test), convert_dict_value_to_string(Y_predict), rownames = ['Actual Outcome'], colnames = ['Predicted Outcome']))
 
-results = confusion_matrix(y_test, Y_predict) 
-print(results)
+# print("Train acc : ", acc
+# results = confusion_matrix(y_test, Y_predict) 
+# print(results)
 print("ACCURACY :     ",accuracy_score(Y_predict, y_test)*100)
 
 
 
 
 
-
-
-# print(pd.crosstab(convert_dict_value_to_string(y_test), convert_dict_value_to_string(Y_predict), rownames = ['Actual Outcome'], colnames = ['Predicted Outcome']))

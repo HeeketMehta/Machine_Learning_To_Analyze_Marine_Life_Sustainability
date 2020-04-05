@@ -10,8 +10,7 @@ from sklearn.metrics import accuracy_score,recall_score,confusion_matrix
 
 
 from sklearn.model_selection import train_test_split
-# from sklearn.svm import LinearSVC
-from sklearn.svm import SVC
+
 
 
 #####  CLEANING STAGE ###############
@@ -81,10 +80,8 @@ def convert_dict_value_to_string(a):
 
 
 
-# print(pd.crosstab(convert_dict_value_to_string(y_test), convert_dict_value_to_string(Y_predict), rownames = ['Actual Outcome'], colnames = ['Predicted Outcome']))
+print(pd.crosstab(convert_dict_value_to_string(y_test), convert_dict_value_to_string(Y_predict), rownames = ['Actual Outcome'], colnames = ['Predicted Outcome']))
 
-results = confusion_matrix(y_test, Y_predict) 
-print(results)
 print("ACCURACY :     ",accuracy_score(Y_predict, y_test)*100)
 
 

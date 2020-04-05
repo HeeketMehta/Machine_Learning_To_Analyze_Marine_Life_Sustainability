@@ -5,12 +5,14 @@ import numpy as np
 import pandas as pd
 
 np.random.seed(0)
+
 from sklearn.metrics import accuracy_score,recall_score,confusion_matrix
 
 
 
 from sklearn.model_selection import train_test_split
-# from sklearn.svm import LinearSVC
+
+
 from sklearn.svm import SVC
 
 
@@ -22,7 +24,7 @@ df2 = pd.read_csv('datasets/cleaned_data_final.csv')
 
 
 
-features = df2.columns[4:10]
+features = df2.columns[3:10]
 
 # print(features)
 
@@ -33,33 +35,27 @@ y_1 = np.array(df2['new_WQI'])
 
 X_train, X_test, y_train, y_test = train_test_split(X_1, y_1, test_size=0.30, random_state=42)
 
-print("no of training samples", len(y_train))  ## 45678
-print("no of testing samples", len(y_test)) ## 15120
-
-
-# features = df2.columns[:15]
-
-# print(features)
-# y = train['ScoreText']
 
 
 
-from sklearn.neighbors import KNeighborsClassifier
+
+print("no of training samples", len(y_train))
+print("no of testing samples", len(y_test))
 
 
 
-clf = KNeighborsClassifier(n_neighbors=3)
+
+clf = SVC(gamma='auto')
+
+
 clf.fit(X_train, y_train)
 
 
+# Y_predict = clf.predict([[29.7,5.8 , 6.9, 64, 3.8, 0.5, 8443]])
 
 Y_predict = clf.predict(X_test)
 
-#
-
-
-
-
+# print(Y_predict)
 
 
 
@@ -86,23 +82,9 @@ def convert_dict_value_to_string(a):
 
 
 
-
-
-
-
-
-
-
-
 print(pd.crosstab(convert_dict_value_to_string(y_test), convert_dict_value_to_string(Y_predict), rownames = ['Actual Outcome'], colnames = ['Predicted Outcome']))
-# print(preds[0:20])
-# print(test['ScoreText'].head(20))
-
-# print("Train acc : ", accuracy_score(train['ScoreText'], y))
 
 
-print("ACCURACY :     ",accuracy_score(Y_predict, y_test)*100)
-
-
-
-
+results = confusion_matrix(y_test, Y_predict) 
+print(results)
+print("ACCURACY :     ",round(accuracy_score(Y_predict, y_test)*100,2))

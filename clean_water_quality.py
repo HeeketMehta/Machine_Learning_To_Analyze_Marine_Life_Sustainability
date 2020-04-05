@@ -256,6 +256,9 @@ df['wbdo']=df['nB.O.D. (mg/l)'] * 0.234
 df['wec']=df['nCONDUCTIVITY (µmhos/cm)']* 0.009
 df['wna']=df['nNITRATENaN N+ NITRITENaNN (mg/l)'] * 0.028
 df['wco']=df['nTOTAL COLIFORM (MPN/100ml)Mean'] * 0.281
+
+
+
 df['wqi']=df.wph+df.wdo+df.wbdo+df.wec+df.wna+df.wco 
 
 
@@ -272,14 +275,10 @@ print("5 - unsuitable quality")
 
 
 
-
-
-
-
-df['new_WQI']=df['wqi'].apply(lambda x:(1 if (25>=x>0)  
-										else(2 if  (50>=x>25) 
-										else(3 if (75>=x>50)
-										else(4 if (100>=x>75) 
+df['new_WQI']=df['wqi'].apply(lambda x:(1 if (100>=x>90)  
+										else(2 if  (90>=x>70) 
+										else(3 if (70>=x>50)
+										else(4 if (50>=x>25) 
 										else 5)))))
 
 

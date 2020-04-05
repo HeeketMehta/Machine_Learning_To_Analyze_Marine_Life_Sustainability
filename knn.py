@@ -81,14 +81,10 @@ def convert_dict_value_to_string(a):
 
 
 
+# print(pd.crosstab(convert_dict_value_to_string(y_test), convert_dict_value_to_string(Y_predict), rownames = ['Actual Outcome'], colnames = ['Predicted Outcome']))
 
-print(pd.crosstab(convert_dict_value_to_string(y_test), convert_dict_value_to_string(Y_predict), rownames = ['Actual Outcome'], colnames = ['Predicted Outcome']))
-# print(preds[0:20])
-# print(test['ScoreText'].head(20))
-
-# print("Train acc : ", accuracy_score(train['ScoreText'], y))
-
-
+results = confusion_matrix(y_test, Y_predict) 
+print(results)
 print("ACCURACY :     ",accuracy_score(Y_predict, y_test)*100)
 
 

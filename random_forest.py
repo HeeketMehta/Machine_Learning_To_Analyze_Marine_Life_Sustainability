@@ -25,7 +25,7 @@ df2 = pd.read_csv('datasets/cleaned_data_final.csv')
 
 features = df2.columns[3:10]
 
-# print(features)
+print(features)
 
 
 X_1 = np.array(df2[features])
@@ -50,13 +50,11 @@ clf = RandomForestClassifier(n_jobs= 2, random_state = 0)
 
 clf.fit(X_train, y_train)
 
+# Y_predict = clf.predict([[6.7, 6.4, 93, 1.4, 0.1, 3433]])
+
 Y_predict = clf.predict(X_test)
 
-#
-
-
-
-
+# print(Y_predict)
 
 
 
@@ -85,21 +83,14 @@ def convert_dict_value_to_string(a):
 
 
 
-
-
-
-
-
-
-print(pd.crosstab(convert_dict_value_to_string(y_test), convert_dict_value_to_string(Y_predict), rownames = ['Actual Outcome'], colnames = ['Predicted Outcome']))
-# print(preds[0:20])
-# print(test['ScoreText'].head(20))
-
-# print("Train acc : ", accuracy_score(train['ScoreText'], y))
-
-
+results = confusion_matrix(y_test, Y_predict) 
+print(results)
 print("ACCURACY :     ",accuracy_score(Y_predict, y_test)*100)
 
 
 
 
+
+
+
+# print(pd.crosstab(convert_dict_value_to_string(y_test), convert_dict_value_to_string(Y_predict), rownames = ['Actual Outcome'], colnames = ['Predicted Outcome']))

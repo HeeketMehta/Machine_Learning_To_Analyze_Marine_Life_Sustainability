@@ -1,8 +1,25 @@
 import pandas as pd
 import numpy as np
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 ################################################################# PROCESSING THE FILE AND CONVERTING DTYPES ###################################################
 df = pd.read_csv(r"datasets/waterData1.csv",encoding="ISO-8859-1")
+
+
+
+###########	CONVERTING OBJECT DTYPE INTO FLOAT64 	############
 
 df['Temp'] = pd.to_numeric(df['Temp'], errors = 'coerce')
 df['B.O.D. (mg/l)'] = pd.to_numeric(df['B.O.D. (mg/l)'], errors = 'coerce')
@@ -14,20 +31,20 @@ df['FECAL COLIFORM (MPN/100ml)'] = pd.to_numeric(df['FECAL COLIFORM (MPN/100ml)'
 # print(df.dtypes)
 
 
-df.fillna(0, inplace = True)
+df.fillna(0, inplace = True)   # REPLACING ALL NAN VALUES WITH 0
 
 
 
 # print(df.dtypes)
-df.drop(df.index[262], inplace=True)
+df.drop(df.index[262], inplace=True)  ####	DROPPING ROWS WITH ALL NAN VALUES ######
 df.drop(df.index[433], inplace=True)
 df.drop(df.index[1914], inplace=True)
 
-df.drop(['STATION CODE'], axis=1, inplace = True)
+df.drop(['STATION CODE'], axis=1, inplace = True)		####  DROPPING STATION CODE AS IT IS NOT RELEVANT INFO #######
 
 
 # print(df.columns)
-df.drop(['FECAL COLIFORM (MPN/100ml)'], axis=1, inplace = True)
+df.drop(['FECAL COLIFORM (MPN/100ml)'], axis=1, inplace = True)        ####  DROPPING FECAL COLI AS IT IS INCLUDED IN THE TOTAL COLI FIELD  #######
 
 
 
@@ -52,7 +69,6 @@ def clean_data_with_mean(df, attr):
 
 
 	mean_attr = sum_avg/c
-	# print("SUM OF ", attr, "is equal to ",sum_avg)
 
 	print("Mean OF ",attr," is  ",mean_attr)
 
@@ -61,7 +77,7 @@ def clean_data_with_mean(df, attr):
 	# print(mean1)
 	for i in df[attr]:
 		if i == 0.0 :
-			df[attr].replace(0, round(mean_attr,2), inplace = True)
+			df[attr].replace(0, round(mean_attr,2), inplace = True)  ### REPLACING ALL ZEROES WITH THE MEAN VALUES #######
 		else:
 			pass
 
@@ -91,7 +107,7 @@ def clean_data_with_median(df, attr):
 
 	for i in df[attr]:
 		if i == 0.0 :
-			df[attr].replace(0, round(median_value,2), inplace = True)
+			df[attr].replace(0, round(median_value,2), inplace = True)	### REPLACING ALL ZEROES WITH THE MEDIAN VALUES #######
 		else:
 			pass
 
@@ -261,8 +277,8 @@ df['wco']=df['nTOTAL COLIFORM (MPN/100ml)Mean'] * 0.281
 
 df['wqi']=df.wph+df.wdo+df.wbdo+df.wec+df.wna+df.wco 
 
-
-
+print()
+print("LEGEND FOR THE WQI IS - ")
 print("1 - excellent quality")
 print("2 - good quality")
 print("3 - poor quality")

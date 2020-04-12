@@ -63,13 +63,11 @@ def convert_dict_value_to_string(a):
 	x = list(a)
 	for i in range (0,len(x)):
 		if x[i] == 1:
-			x[i] = "Excellent"
+			x[i] = "Desirable Water"
 		elif x[i]==2:
-			x[i] = "Good"
-		elif x[i] == 3:
-			x[i] = "Poor"
+			x[i] = "Acceptable Water"
 		else:
-			x[i] = "Very Poor"
+			x[i] = "Harmful Water"
 		
 	alpha = np.asarray(x)
 	return alpha

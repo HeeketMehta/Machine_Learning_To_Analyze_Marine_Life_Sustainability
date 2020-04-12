@@ -523,7 +523,7 @@ wqi_fish_lower_desirable =wph_fish+wdo_fish+wbdo_fish+wec_fish+wna_fish+wco_fish
 
 
 final_Desirable_wqi_fish = wqi_fish_upper_desirable				### WQI 100-final_desirable_Wqi_value is desirable wateer quality for fishes 	##########
-
+# print("final_Desirable_wqi_fish = ",final_Desirable_wqi_fish)
 
 
 
@@ -563,7 +563,7 @@ wqi_fish_upper_acceptable =wph_fish+wdo_fish+wbdo_fish+wec_fish+wna_fish+wco_fis
 final_acceptable_wqi_fish = wqi_fish_upper_acceptable				### WQI final_desirable_Wqi_value is desirable-final_acceptable_Wqi_value is desirable water quality for fishes 	##########
 
 
-
+# print("final_acceptable_wqi_fish = ",final_acceptable_wqi_fish)
 
 
 

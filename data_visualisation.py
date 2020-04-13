@@ -12,10 +12,10 @@ df = pd.read_csv('datasets/cleaned_data_final.csv')
 
 
 
-df.to_csv('state.csv')
+df.to_csv('datasets/state.csv')
 
 
-df2 = pd.read_csv('state.csv')
+df2 = pd.read_csv('datasets/state.csv')
 
 
 
@@ -23,13 +23,13 @@ df2 = pd.read_csv('state.csv')
 def inital_plot(df, variable):
 	
 	data_0 = df[df['STATE'] == variable]
-	data_0.to_csv('state_Try.csv', mode = 'a', header = True)
+	data_0.to_csv('datasets/state_filtered.csv', mode = 'a', header = True)
 
 
 def following_plots(df, variable):
 	
 	data_0 = df[df['STATE'] == variable]
-	data_0.to_csv('state_Try.csv', mode = 'a', header = False)
+	data_0.to_csv('datasets/state_filtered.csv', mode = 'a', header = False)
 
 
 
@@ -38,7 +38,7 @@ def following_plots(df, variable):
 
 def count(var1):
 
-	df3 = pd.read_csv('state_Try.csv')
+	df3 = pd.read_csv('datasets/state_filtered.csv')
 	list_Try = []
 	for i in df3['STATE']:
 		list_Try.append(i)
@@ -61,13 +61,26 @@ for i in list1:
 
 
 
-df3 = pd.read_csv('state_Try.csv')
+df3 = pd.read_csv('datasets/state_filtered.csv')
+
+
+
+df3['Water Quality']=df['new_WQI'].apply(lambda x:("Excellent Water Quality" if (x==1)  
+										else("Good Water Quality" if  (x==2)
+										else("Poor Water Quality" if  (x==3)
+										else("Very Poor Water Quality" if  (x==4) 
+										else "Unsuitable Water Quality")))))
+
+
+
+
+
 
 
 
 
 df3.groupby(
-  ['STATE','new_WQI']
+  ['STATE','Water Quality']
 ).size().unstack().plot(kind='bar',stacked=False,legend=True)
 
 plt.xlabel('States')

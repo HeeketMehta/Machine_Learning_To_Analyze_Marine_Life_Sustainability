@@ -48,8 +48,8 @@ def count(var1):
 	return list_Try.count(var1)
 
 
-list1 = ['MEGHALAYA','GUJARAT','MAHARASHTRA','MANIPUR','KERALA','HARYANA', 'HIMACHAL PRADESH',
-		'RAJASTHAN','MEGHALAYA','MIZORAM','MANIPUR','PONDICHERRY']
+list1 = ['MEGHALAYA','GUJARAT','MAHARASHTRA','MANIPUR','KERALA','HARYANA',
+		'RAJASTHAN','MEGHALAYA','MIZORAM','MANIPUR','PONDICHERRY','ODISHA']
 
 inital_plot(df2, 'GOA')
 for i in list1:
@@ -70,5 +70,14 @@ df3.groupby(
   ['STATE','new_WQI']
 ).size().unstack().plot(kind='bar',stacked=False,legend=True)
 
+plt.xlabel('States')
+plt.ylabel('Count of WQI')
+
+
+
+
+
+
 plt.show()
+
 

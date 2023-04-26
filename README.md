@@ -17,12 +17,21 @@ Moreover, our aim is to categorize the freshness of fish based on fish tissues u
 In this project, we have made an attempt to study the quality of water. There are many quality parameters like  ‘pH’, ‘Temperature’, ‘Dissolved Oxygen (DO)’, etc. which plays a key role in determining the Water quality index (WQI). 
 The WQI values range from 19.3 to 99.8 which are then scaled down and classified into five categories using Random Forest Algorithm, K- Nearest Neighbors (KNN) and Support Vector Machine. By taking the WQI into consideration.
 The results obtained by the Random Forest Algorithm provides 92.127% accuracy in classifying the water quality. 
-The results were visualized on the basis of various years and states in India.
+The results were visualized on the basis of various years and states in India.<br />
 
 
 ## Getting Started 
 
+We mostly use Python in the project and hence, we used libraries that can be installed using - <br />
+```
+pip install pandas
+pip install numpy
+pip install seaborn
+pip install matplotlib
+pip install sklearn
+```
 
+## Results
 
 
 

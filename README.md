@@ -31,7 +31,13 @@ pip install matplotlib
 pip install sklearn
 ```
 
-## Results
+## Exploratory Data Analysis
+
+
+![BAR_GRAPH_STATE](https://github.com/HeeketMehta/Marine-Life-Sustainability-using-ML/blob/master/OUTPUT/DATA_VISUALIZATION/BAR_GRAPH_STATE.JPG)
+![Year_vs_wqi](https://github.com/HeeketMehta/Marine-Life-Sustainability-using-ML/blob/master/OUTPUT/DATA_VISUALIZATION/Year_vs_wqi%20line%20chart.JPG)
+![State_VS_Fish](https://github.com/HeeketMehta/Marine-Life-Sustainability-using-ML/blob/master/OUTPUT/DATA_VISUALIZATION/STATE%20VS%20FISH%20Water.JPG)
+
 
 
 

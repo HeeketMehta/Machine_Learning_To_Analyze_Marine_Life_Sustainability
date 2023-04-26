@@ -1,10 +1,11 @@
 # A Machine Learning Approach to Analyze Marine Life Sustainability
 
-## Proceedings of International Conference on Intelligent Computing, Information and Control Systems, 2021, Volume 1272 <br />
+```
+Proceedings of International Conference on Intelligent Computing, Information and Control Systems, 2021, Volume 1272 <br />
 ISBN : 978-981-15-8442-8<br />
 Danish Jain, Shanay Shah, Heeket Mehta, Ayushi Lodaria, Lakshmi Kurup<br />
 https://link.springer.com/chapter/10.1007/978-981-15-8443-5_53<br />
-
+```
 
 ## Problem Statement <br />
 
@@ -31,12 +32,53 @@ pip install matplotlib
 pip install sklearn
 ```
 
+## Proposed Architecture / Flow Diagram
+We propose the flow diagram below and execute the methodology in the following sense, to obtain results of water quality analysis, to understand various trends, and build machine learning models to understand how polluted water quality may be and its effect on marine life.<br />
+![BAR_GRAPH_STATE](https://github.com/HeeketMehta/Marine-Life-Sustainability-using-ML/blob/master/OUTPUT/System_Architecture.png)<br />
+
 ## Exploratory Data Analysis
 
 
-![BAR_GRAPH_STATE](https://github.com/HeeketMehta/Marine-Life-Sustainability-using-ML/blob/master/OUTPUT/DATA_VISUALIZATION/BAR_GRAPH_STATE.JPG)
-![Year_vs_wqi](https://github.com/HeeketMehta/Marine-Life-Sustainability-using-ML/blob/master/OUTPUT/DATA_VISUALIZATION/Year_vs_wqi%20line%20chart.JPG)
-![State_VS_Fish](https://github.com/HeeketMehta/Marine-Life-Sustainability-using-ML/blob/master/OUTPUT/DATA_VISUALIZATION/STATE%20VS%20FISH%20Water.JPG)
+![BAR_GRAPH_STATE](https://github.com/HeeketMehta/Marine-Life-Sustainability-using-ML/blob/master/OUTPUT/DATA_VISUALIZATION/BAR_GRAPH_STATE.JPG)<br />
+![Year_vs_wqi](https://github.com/HeeketMehta/Marine-Life-Sustainability-using-ML/blob/master/OUTPUT/DATA_VISUALIZATION/Year_vs_wqi%20line%20chart.JPG)<br />
+![State_VS_Fish](https://github.com/HeeketMehta/Marine-Life-Sustainability-using-ML/blob/master/OUTPUT/DATA_VISUALIZATION/STATE%20VS%20FISH%20Water.JPG)<br />
+
+
+## Machine Learning Results
+
+Random Forest algorithm performs the best, to classify the water quality into various classes, with the segragation being on the quality of water, for both being potable and for the marine life present in the waterbodies.<br />
+
+The results - in terms of confusion matrix/ cross tab are mentioned below - 
+### Random Forest Implementation -
+![Random Forest Implementation](https://github.com/HeeketMehta/Marine-Life-Sustainability-using-ML/blob/master/OUTPUT/Random%20Forest%20Output.JPG)<br />
+
+### Support Vector Machine Implementation -
+![Support Vector Machine Implementation](https://github.com/HeeketMehta/Marine-Life-Sustainability-using-ML/blob/master/OUTPUT/SVM_OUTPUT.JPG)
+<br />
+
+### K-Nearest Neigbors Implementation -
+![K-Nearest Neigbors Implementation](https://github.com/HeeketMehta/Marine-Life-Sustainability-using-ML/blob/master/OUTPUT/KNN_OUTPUT.JPG)<br />
+
+## Conclusion
+Please check out the paper we published at the following URL - 
+```
+https://link.springer.com/chapter/10.1007/978-981-15-8443-5_53
+```
+We really appreciate your interest
+
+## Authors
+```
+Heeket Mehta
+Ayushi Lodaria
+Shanay Shah
+Danish Jain
+```
+
+## Mentorship -
+```
+Prof. Lakshmi Kurup
+```
+
 
 
 
